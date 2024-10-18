@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   width: 100%;
+   height: 100vh;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.head{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head div{
+    display: flex;
+    gap: 20px;
+}
+
+
+a{
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.small{
+    display: flex;
+    align-items: center;
+}
+
+.small img{
+    width: 50px;
+    height: 50px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
+}
+
+.small{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.mid{
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.mid .asid{
+    height: 100vh;
+    width: 0;
+    background-color: rgb(230, 225, 225);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+
+.mid aside .as1 a, .mid aside .as2 a{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 40px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: black;
+}
+
+.mid aside .as1 a h5, .mid aside .as2 a h5{
+    font-size: 15px;
+    text-align: left;
+}
+
+.mid aside .as1 a i, .mid aside .as2 a i,.mid aside .as2 a img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+
+.mid aside .as2{
+    margin: 310px 0;
+}
+
+.mid .btn1{
+    margin: 5px 0;
+}
+
+.mid button, aside div button{
+    border: none;
+    padding: 0 10px;
+}
+
+.main{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: white;
+}
+
+.main #main1{
+    background-color: white;
+}
+
+.main #main2{
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+  
+#message-area {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+  
+#input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+  
+#message-input {
+    flex-grow: 1;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+}
+  
+#send-btn {
+    margin-left: 10px;
+}
+  
+.file-label {
+    margin-right: 10px;
+    cursor: pointer;
+}
+  
+.file-label i {
+    font-size: 1.5em;
+}
+  
+#message-area .message {
+    margin-bottom: 10px;
+}
+  
+#message-area .message .text {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+}

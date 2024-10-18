@@ -1,0 +1,73 @@
+<body class="bg-white grid">
+    <div class="small">
+      <img src="/img/images.png" alt="Chatnow image" />
+      <h4><b>Chatnow</b></h4>
+    </div>
+    <div class="mid">
+      <button id="btn" class="btn1" type="button" onclick="openNav()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+      <aside id="aside" class="asid">
+        <div class="small">
+          <img src="/img/images.png" alt="Chatnow image" />
+          <h4><b>Chatnow</b></h4>
+        </div>
+        <button id="btn" class="btn1" type="button" onclick="closeNav()">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="as1">
+          <a href="#">
+            <i class="fa fa-comment-o" aria-hidden="true"></i>
+            <h5>Chat</h5>
+          </a>
+          <a href="#">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <h5>Call</h5>
+          </a>
+          <a href="#">
+            <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+            <h5>Status</h5>
+          </a>
+        </div>
+        <div class="as2">
+          <a href="#">
+            <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+            <h5>Setttings</h5>
+          </a>
+          <a href="#">
+            <img class="img-thumbnail" src="/img/download (2).jpeg" alt="" />
+            <h5>Profile</h5>
+          </a>
+        </div>
+      </aside>
+    </div>
+    <div class="container-fluid row main">
+      <div class="col-3" id="main1">
+        <h4>Chats</h4>
+        <div></div>
+      </div>
+      <div class="col-9" id="main2">
+        <div id="chat-container">
+          <div id="message-area"></div>
+          <div id="input-area" class="d-flex align-items-center">
+            <input
+              type="text"
+              id="message-input"
+              class="form-control"
+              placeholder="Type a message"
+              aria-label="Type a message"
+            />
+            <label for="file-input" class="file-label">
+              <i class="fa fa-paperclip" aria-hidden="true"></i>
+            </label>
+            <input type="file" id="file-input" class="d-none" />
+            <button id="send" class="btn btn-success">
+              <i class="fa fa-send"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</body>

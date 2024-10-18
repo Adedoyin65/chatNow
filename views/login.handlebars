@@ -1,0 +1,35 @@
+<body class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center text-success mb-4">Sign Up</h1>
+        <form id="login">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              autocomplete="email"
+              aria-describedby="emails"
+            />
+            <span id="emails" class="error" aria-live="polite"></span>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              aria-describedby="pass"
+            />
+            <span id="pass" class="error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <script src="/form.js"></script>
+  </body>

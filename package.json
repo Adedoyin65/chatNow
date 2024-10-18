@@ -1,0 +1,25 @@
+{
+  "name": "chatnow",
+  "version": "1.0.0",
+  "description": "A web application like whatsapp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "chatNow"
+  },
+  "keywords": [
+    "Chat-app"
+  ],
+  "author": "Ogunyemi Daniel",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^5.1.1",
+    "express": "^4.21.1",
+    "express3-handlebars": "^0.5.2",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.0"
+  }
+}
