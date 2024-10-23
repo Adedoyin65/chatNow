@@ -1,8 +1,12 @@
 <body class="container my-5">
+    <div class="small">
+        <img src="/img/image.png" alt="Chatnow image" />
+        <h4><b>Chatnow</b></h4>
+    </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
         <h1 class="text-center text-success mb-4">Sign Up</h1>
-        <form id="sample">
+        <form action= "/signup" method= "POST" role= "form" enctype= "multipart/form-data" id="sample">
           <div class="mb-3">
             <label for="user-name" class="form-label">User Name</label>
             <input
@@ -39,6 +43,18 @@
               aria-describedby="pass"
             />
             <span id="pass" class="error" aria-live="polite"></span>
+          </div>
+
+          <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input
+              type="file"
+              class="form-control"
+              id="filephoto"
+              name="photo"
+              accept="image/*"
+              required
+            />
           </div>
 
           <div class="mb-3">
