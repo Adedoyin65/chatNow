@@ -14,11 +14,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    {{{_sections.head}}}
     {{#if title}}
     <title> {{title}} </title>
     {{/if}}
 </head>
 <body>
     {{{ body }}}
+    {{{_sections.script}}}
 </body>
 </html>

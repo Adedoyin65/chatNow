@@ -30,6 +30,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const handlebars = require("express3-handlebars").create({
   defaultLayout: "main",
+  helpers: {
+    section: function (name, options) {
+      if (!this._sections) {
+        this._sections = {};
+      }
+      this._sections[name] = options.fn(this);
+      return null;
+    },
+  },
 });
 
 app.engine("handlebars", handlebars.engine);
@@ -54,7 +63,11 @@ app.post("/signup", function (req, res) {
   console.log(req.body);
   console.log(`Username: ${username}, Password: ${password}`);
 
-  res.json({ redirect: "/login" });
+  if (req.xhr || req.accepts("json", "html") === "json") {
+    res.send({ success: true, redirect: "/login", name: username });
+  } else {
+    res.redirect(303, "/login");
+  }
 });
 
 app.get("/login", function (req, res) {
@@ -90,4 +103,3 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`Server is running on: ${port}`);
 });
-
