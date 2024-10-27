@@ -19,6 +19,9 @@ const credentials = require("./credentials");
 //Import the express-session module
 const session = require("express-session");
 
+//Import the mysql module
+const mysql = require("mysql2");
+
 // Create an instance of the express framework
 const app = express();
 
@@ -45,6 +48,13 @@ const handlebars = require("express3-handlebars").create({
       return null;
     },
   },
+});
+
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "Eden65",
+  password: "ogunyemi65",
+  database: "chatnow",
 });
 
 app.engine("handlebars", handlebars.engine);
@@ -81,15 +91,10 @@ app.get("/userpage", (req, res) => {
 });
 
 app.post("/signup", function (req, res) {
-  const { username, password } = req.body;
-  console.log(req.body);
-  console.log(`Username: ${username}, Password: ${password}`);
-
-  if (req.xhr || req.accepts("json", "html") === "json") {
-    res.send({ success: true, redirect: "/login", name: username });
-  } else {
-    res.redirect(303, "/login");
-  }
+  con.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected!");
+  });
 });
 
 app.get("/login", function (req, res) {

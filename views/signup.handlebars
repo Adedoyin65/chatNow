@@ -10,7 +10,7 @@
         <div id="con" class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center text-success mb-4">Sign Up</h1>
-                <form id="sample" novalidate>
+                <form action="/signup" method="post" id="sample" role="form" enctype="application/x-www-form-urlencoded" novalidate>
                     <div class="mb-3">
                         <label for="user-name" class="form-label">User Name</label>
                         <input type="text" class="form-control" id="user-name" name="username" autocomplete="name" aria-describedby="username" required>
@@ -40,10 +40,6 @@
                             <option value="other">Other</option>
                         </select>
                         <div class="invalid-feedback">Please select your gender.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="bio" class="form-label">Short Bio</label>
-                        <textarea class="form-control" id="bio" name="bio" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-success w-100">Sign Up</button>
                 </form>
