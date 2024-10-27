@@ -13,6 +13,12 @@ const path = require("path");
 //Import the body-parser module
 const bodyParser = require("body-parser");
 
+//Import the credentials
+const credentials = require("./credentials");
+
+//Import the express-session module
+const session = require("express-session");
+
 // Create an instance of the express framework
 const app = express();
 
@@ -44,6 +50,22 @@ const handlebars = require("express3-handlebars").create({
 app.engine("handlebars", handlebars.engine);
 
 app.set("view engine", "handlebars");
+
+app.use(
+  session({
+    key: "monster",
+    resave: false,
+    saveUninitialized: true,
+    secret: credentials.cookieCode,
+    cookie: { signed: true },
+  })
+);
+
+app.use(function (req, res, next) {
+  res.locals.flash = req.session.flash;
+  delete req.session.flash;
+  next();
+});
 
 // Define the route to serve the index.html file
 app.get("/", (req, res) => {
